@@ -1,0 +1,21 @@
+# Eclipse
+.classpath
+.project
+.settings/
+.pmd
+.checkstyle
+.ruleset
+atlassian-ide-plugin.xml
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+!src/**/target

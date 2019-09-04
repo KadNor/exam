@@ -1,0 +1,11 @@
+Warming up
+
+Write a method named isSubMap that accepts two hash maps from strings to strings as its parameters and returns true if every key in the first map is also contained in the second map and maps to the same value in the second map.
+ For example,
+{Smith=949–0504, Marty=206–9024} 
+is a sub-map of 
+{Marty=206–9024, Hawking=123–4567, Smith=949–0504, Newton=123– 4567}. 
+
+Therefore if the first map is map1 and the second is map2, here isSubMap(map1, map2) would return true. 
+The empty map is considered to be a sub-map of every map. 
+Constraints: You may not declare any auxiliary data structures in solving this problem.
