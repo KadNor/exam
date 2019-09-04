@@ -1,0 +1,52 @@
+Designing a spaceship
+
+Write a class called Spaceship that models some characteristics of a Spaceship. 
+Specifically, a Spaceship:
+-	keeps track of the amount of food on board (in pounds), 
+-	a list of names of visited planets (in order of visit), 
+-	the name of each crew member on board, 
+-	how much food (in pounds) each crew member consumes each day
+
+You can create a Spaceship by specifying the amount of food initially on board, like so: 
+Spaceship myShip = new Spaceship(50); // 50 pounds of food initially
+
+A Spaceship should have the following public methods:
+public interface Spaceship {
+    /**
+     * Boards a crew member with the given food intake. This crew member will now consume food during trips.
+     */
+    public void board(String crewMemberName, int foodPerDay);
+
+    /**
+     * Unboards a crew member with the given name from the ship. This crew member is no longer on the ship and no longer consumes food.
+     */
+    public void unboard(String crewMemberName);
+
+    /**
+     * Returns a String of visited planets, in order of visit. The string should be formatted like “[Earth, Mars, Venus]”
+     */
+    public String getPlanetsVisited();
+
+    /**
+     * Attempts to fly to a planet, which takes the given number of days.
+     */
+    public boolean flyTo(String planetName, int daysRequired);
+}
+
+The most involved public method is flyTo. This method should do the following: 
+-	It should first calculate if there is enough food on board to feed all crew members for the number of days required to get to this planet. 
+-	If there is enough food, it should update the amount of food onboard to reflect that the ship has traveled to this planet, and it should add this planet to its list of visited planets. The method should also return true to indicate the trip was successful. 
+-	If there is not enough food, then the method should return false to indicate the trip failed. It should not modify either the onboard food or the list of visited planets.
+
+As an example, let’s say on myShip we have onboard Nolan, who consumes 3 pounds of food daily, and Nick, who consumes 4 pounds of food daily. myShip.flyTo(“Venus”, 7) should return true because Nick and Nolan consume 7 pounds of food per day in total, which over 7 days is 7*7=49 pounds of food (and our ship has 50). We should therefore add “Venus” to our list of visited planets, and set the food onboard to now be 50-49=1. 
+
+On the other hand, myShip.flyTo(“Mars”, 10) should return false because we require 7*10=70 pounds of food to get to Mars, but our ship only has 50. We should not add “Mars” to our list of visited planets, nor change our onboard food.
+
+Do:
+a.	Create a maven project for your spaceship
+b.	Create a git repository on github for the spaceship. Add the maven project.
+c.	Create an OOP model for your spaceship. Chose the best data types and structures for the problem.
+d.	Implement the flyTo(…) method. 
+e.	Add unit tests for your implementation. The coverage should be higher than 80%
+
+
