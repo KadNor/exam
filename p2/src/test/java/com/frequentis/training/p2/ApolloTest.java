@@ -50,6 +50,20 @@ public class ApolloTest {
         assertEquals(buildExpectedPlanetsString(PLANET_1, PLANET_2), sut.getPlanetsVisited());
     }
 
+    @Test
+    public void flyTo_theSamePlanetTwice_shallAddOnlyOnce() {
+        // Given
+        sut = new Apollo(STANDARD_AMOUNT_OF_FOOD);
+        boardCrewMembers(6);
+
+        // When
+        boolean flightSuccess = sut.flyTo(PLANET_1, SHORT_FLIGHT) && sut.flyTo(PLANET_1, SHORT_FLIGHT);
+
+        // Then
+        assertTrue(flightSuccess);
+        assertEquals(buildExpectedPlanetsString(PLANET_1), sut.getPlanetsVisited());
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void flyTo_invalidParameters_shallThrowException() {
         // Given

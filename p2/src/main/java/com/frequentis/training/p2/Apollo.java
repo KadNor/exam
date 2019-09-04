@@ -1,7 +1,9 @@
 package com.frequentis.training.p2;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.frequentis.training.p2.exception.InvalidCrewMemberException;
@@ -9,12 +11,12 @@ import com.frequentis.training.p2.exception.InvalidCrewMemberException;
 public class Apollo implements Spaceship {
 
     private int foodLeft;
-    private List<String> visitedPlanets;
+    private Set<String> visitedPlanets;
     private List<CrewMember> crewMembers;
 
     public Apollo(final int foodLeft) {
         this.foodLeft = foodLeft;
-        this.visitedPlanets = new ArrayList<>();
+        this.visitedPlanets = new LinkedHashSet<>();
         this.crewMembers = new ArrayList<>();
     }
 
